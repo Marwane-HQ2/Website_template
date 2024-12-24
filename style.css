@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Audiowide&family=Delicious+Handrawn&family=Indie+Flower&family=Orbitron:wght@400..900&family=Saira+Stencil+One&family=Shadows+Into+Light+Two&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Silkscreen:wght@400;700&family=Sriracha&family=Tangerine:wght@400;700&family=The+Girl+Next+Door&display=swap');
+
+
+:root {
+    /*COLORS*/
+    --yellow: #fffcbf;
+    --pale-blue: #B4E1FF;
+    --purple: #AB87FF;
+    --rose: #ff93ef; 
+    --green: #C1FF9B;
+    
+    /*FONTS*/
+    --pixel-font: "Silkscreen", serif;
+    --handwritten-font: "Shadows Into Light Two", serif;
+}
+
+body {
+    background-image: url("paper.png");
+    background-repeat: repeat;
+    margin: 0;
+}
+
+/* FIRST DIVISION */
+
+.welcome {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "text image"
+    ;
+    margin: 8px;
+}
+
+.text-welcome {
+    grid-area: text;
+    padding: 1em;
+}
+
+.text-welcome h1 {
+    font-family: var(--pixel-font);
+    font-weight: 400;
+}
+.text-welcome p {
+    font-family: var(--handwritten-font);
+}
+
+@keyframes flip-flop {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(45deg);
+    }
+    66% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.img-welcome {
+    text-align: center;
+    grid-area: image;
+    
+}
+.img-welcome img {
+    width: 75%;
+    animation-name: flip-flop;
+    animation-duration: 2s;
+    animation-delay: 500ms;
+    animation-iteration-count: infinite;
+}
+
+/* SECOND DIVISION */
+
+.container-grid-projects {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas: 
+    "title title title"
+    "first second third"
+    ;
+    background-color: var(--pale-blue);
+    padding: 2em;
+}
+
+.title-part-2 {
+    grid-area: title;
+    font-family: var(--pixel-font);
+    font-weight: 400;
+    text-align: center;
+    text-decoration: underline wavy black 0.1rem;
+}
+
+.project {
+    display: grid;
+    place-items: center;
+    grid-row: 50% 20% 30%;
+    grid-template-areas: 
+    "image"
+    "subtitle"
+    "description"
+    ;
+
+    padding: 2em;
+    margin: 1em;
+    align-items: center;
+    background-color: var(--purple);
+    border-radius: 8%;
+    box-shadow: 0.5em 0.5em 2em black;
+    opacity: 80%;
+}
+
+.project:hover {
+    cursor: pointer;
+}
+
+.project img {
+    width: 5em;
+    border-radius: 50%;
+    border: 0.1em solid black;
+
+    grid-area: image;
+}
+
+.project h2 {
+    font-family: var(--pixel-font);
+    font-weight: 400;
+
+    grid-area: subtitle;
+}
+
+.project p {
+    grid-area: description;
+    font-family: var(--handwritten-font);
+}
+
+#project-1 {
+    grid-area: first;
+    transition: all 500ms;
+}
+#project-1:hover {
+    opacity: 100%;
+}
+
+#project-2 {
+    grid-area: second;
+    transition: all 500ms;
+}
+#project-2:hover {
+    opacity: 100%;
+}
+
+#project-3 {
+    grid-area: third;
+    transition: all 500ms;
+}
+#project-3:hover {
+    opacity: 100%;
+}
+
+
+/* THIRD DIVISION */
+
+.container-grid-labels {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    place-items: center;
+    grid-template-areas: 
+    "text label-1 label-2";
+}
+
+#quote {
+    padding: 1.5em;
+    grid-area: text;
+}
+#quote h2 {
+    text-align: justify;
+    font-family: var(--pixel-font);
+    font-weight: 400;
+    font-size: 2em;
+}
+#quote .important {
+    font-size: 2em;
+    text-decoration: underline solid black;
+    background-color: var(--purple);
+    line-height: 1.5;
+}
+#quote p {
+    padding: 0.5em;
+    font-family: var(--handwritten-font);
+    font-size: 1.5em;
+}
+
+.label {
+    background-color: var(--purple);
+    font-family: var(--handwritten-font);
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+    border-radius: 10%;
+    margin: 1em;
+    box-shadow: 0.4em 0.4em 1em black;
+
+    width: 4em;
+    height: 1em;
+}
+
+footer {
+    background-color: var(--pale-blue);
+    padding: 1em;
+    font-family: var(--pixel-font);
+    text-align: center;
+}
